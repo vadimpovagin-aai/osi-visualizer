@@ -4,7 +4,7 @@
 ///
 /// @brief
 ///
-
+#define WIN32_LEAN_AND_MEAN
 #pragma once
 #include "types.h"
 #include <QColor>

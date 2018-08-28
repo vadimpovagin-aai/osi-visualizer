@@ -4,7 +4,8 @@
 #include <QFileDialog>
 #include <QMessageBox>
 
-#include <cmath>
+#define _USE_MATH_DEFINES
+#include <math.h>
 
 /*
  *

@@ -5,8 +5,6 @@
 /// @brief
 ///
 
-
-
 #pragma once
 
 #include <QtConcurrent/QtConcurrent>

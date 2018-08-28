@@ -4,7 +4,6 @@
 ///
 /// @brief
 ///
-
 #pragma once
 #include "gllanemarking.h"
 #include <QVector3D>

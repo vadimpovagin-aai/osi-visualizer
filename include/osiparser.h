@@ -7,6 +7,7 @@
 
 #ifndef OSIPARSER_H
 #define OSIPARSER_H
+
 #include "osi_sensordata.pb.h"
 #include "global.h"
 #include "types.h"

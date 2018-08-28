@@ -12,7 +12,9 @@
 
 #include <QWheelEvent>
 
-#include <cmath>
+#define _USE_MATH_DEFINES
+#include <math.h>
+//#include "C:\Qt\Tools\mingw530_32\i686-w64-mingw32\include\c++\cmath"
 
 //QMutex mutex;
 //QMutex mutex2;

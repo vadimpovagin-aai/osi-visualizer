@@ -3,7 +3,7 @@
 #include <QThread>
 #include <QMessageBox>
 
-#include <unistd.h>
+//#include <unistd.h>
 #include <iostream>
 
 #include "osireader.h"
@@ -522,7 +522,9 @@ OsiReader::SendMessage(T& data,
         sleep /= 1000;
         sleep += *deltaDelay_ * 1000;
 
-        usleep(sleep);
+        //usleep(sleep);
+        std::this_thread::sleep_for(std::chrono::microseconds(sleep));
+
         preTimeStamp = curStamp;
 
         SendOutMessage(message);

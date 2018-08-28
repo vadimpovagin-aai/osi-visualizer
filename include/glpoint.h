@@ -4,7 +4,6 @@
 ///
 /// @brief
 ///
-
 #pragma once
 #include "globject.h"
 

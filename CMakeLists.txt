@@ -1,25 +1,29 @@
 cmake_minimum_required(VERSION 3.1)
-add_subdirectory(open-simulation-interface)
+#add_subdirectory(open-simulation-interface)
 project(osi-visualizer)
 
 set(CMAKE_CXX_STANDARD 11)
 
+set(CMAKE_PREFIX_PATH C:/Qt/5.11.1/msvc2015)
+
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
+
+#add_definitions(-DZMQ_STATIC)
 
 find_package(Qt5 COMPONENTS Core Gui OpenGL Widgets Xml Network REQUIRED)
 
 find_path(
   FMILIB_INCLUDE_DIRS
   fmilib.h
-  HINTS /usr/include/fmi-library /usr/include /usr/local/include/fmi-library /usr/local/include
+  HINTS ..\\3rdparty\\FMI\\include
 )
 
 find_library(
   FMILIB_LIBRARY
   fmilib_shared
-  HINTS /usr/lib/fmi-library /usr/lib /usr/local/lib/fmi-library /usr/local/lib
+  HINTS ..\\3rdparty\\FMI\\lib
 )
 
 set(SOURCES
@@ -46,6 +50,7 @@ set(SOURCES
     src/glfieldofview.cpp
     src/fmureceiver.cpp
     src/utils.cpp
+
 )
 
 set(HEADERS
@@ -79,6 +84,10 @@ set(HEADERS
 include_directories(
     ${CMAKE_CURRENT_LIST_DIR}/include
     ${FMILIB_INCLUDE_DIRS}
+    "..\\3rdparty\\osi\\include"
+    "..\\3rdparty\\protobuf\\src"
+    "..\\3rdparty\\cppzmq"
+    "..\\3rdparty\\libzmq\\include"
 )
 
 
@@ -95,9 +104,12 @@ target_link_libraries(${PROJECT_NAME}
     Qt5::OpenGL
     Qt5::Network
 
-    open_simulation_interface
+    #open_simulation_interface
+    "..\\..\\3rdparty\\osi\\lib\\open_simulation_interface_static.lib"
     ${FMILIB_LIBRARY}
-    protobuf
-    zmq
-)
+    "..\\..\\3rdparty\\protobuf\\lib\\libprotobuf.lib"
+    "..\\..\\3rdparty\\libzmq\\lib\\libzmq-v141-mt-4_3_1.lib"
+       
+    ws2_32.lib
+    )
 

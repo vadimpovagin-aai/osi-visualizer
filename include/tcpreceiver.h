@@ -10,7 +10,8 @@
 #include "types.h"
 #include <QtConcurrent/QtConcurrent>
 #include <zmq.hpp>
-
+#undef max
+#undef min
 #include "osi_sensordata.pb.h"
 #include "imessagesource.h"
 

@@ -5,17 +5,16 @@
 /// @brief
 ///
 
-
 #pragma once
-
 #include "osi_version.pb.h"
 #include "osi_sensordata.pb.h"
 
 #include <zmq.hpp>
+//#include "C:\\Users\\Povagin.Vadim\\zmq\\include\\zmq.hpp"
 
 #include <fstream>
 #include <iostream>
-#include <unistd.h>
+//#include <unistd.h>
 
 #include <QObject>
 #include <QMutex>

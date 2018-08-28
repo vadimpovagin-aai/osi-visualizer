@@ -2,7 +2,6 @@
 #include "mainwindow.h"
 #include "tcpreceiver.h"
 #include <QApplication>
-
 #include"osi_sensordata.pb.h"
 #include"osi_sensorview.pb.h"
 
@@ -15,6 +14,7 @@ Q_DECLARE_METATYPE(osi3::SensorView)
 
 int main(int argc, char *argv[])
 {
+    
     qRegisterMetaType<Message>();
     qRegisterMetaType<LaneMessage>();
     qRegisterMetaType<DataType>();
@@ -27,4 +27,5 @@ int main(int argc, char *argv[])
     window.LocalUpdate();
 
     return app.exec();
+    
 }
